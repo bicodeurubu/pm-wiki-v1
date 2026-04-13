@@ -1,6 +1,4 @@
-# Wiki-PM
-
-> ⚠️ **Maintenance Mode** — This repository (v1) is in maintenance mode. For new projects, please use [PM-Wiki v2](https://github.com/bicodeurubu/pm-wiki-v2).
+# PM-Wiki v1
 
 **A living product brain for PM teams — built on Obsidian and any LLM.**
 
@@ -504,6 +502,40 @@ Commit message format used by the agent:
     ├── skills/        Reusable behavior modules
     └── commands/      Workflow command definitions
 ```
+
+---
+
+## Two versions, two philosophies
+
+PM-Wiki v1 and [PM-Wiki v2](https://github.com/bicodeurubu/pm-wiki-v2) are not sequential releases — they are different answers to the same problem, built on different philosophies about how LLMs should work with product knowledge.
+
+**PM-Wiki v1 — structured control**
+
+v1 is opinionated by design. It defines a strict schema (15 frontmatter fields), a full command system, separate agent personas, reusable skill modules, and explicit rules that govern every write. The LLM follows a procedure: classify the input, apply the schema, enforce the graph rules, commit.
+
+This gives you maximum traceability and minimum ambiguity. Every decision is immutable once approved. Every connection is bidirectional and validated. The OST is derived from a precisely maintained graph, not inferred. When a source changes, every dependent page is notified — automatically and deterministically.
+
+v1 is the right choice when you want the system to behave predictably at scale, when PM teams need a shared process that doesn't depend on individual LLM judgment, or when you're in an environment that requires auditability.
+
+**PM-Wiki v2 — open inference**
+
+v2 gives the LLM principles, not procedures. One instruction file (`SIGNAL.md`). Three frontmatter fields. No commands to memorize — you just talk. The folder structure *is* the OST. Extensions are a `## Custom:` section appended to a single file.
+
+v2 trusts that a capable LLM understands what a product brain cares about. It's lighter, faster to start, and more adaptable. The tradeoff is that behavior is less deterministic — the quality of the output depends more on the model and the prompt.
+
+v2 is the right choice for individuals or small teams who want to move fast, prefer natural conversation over structured commands, and are comfortable with the LLM exercising judgment.
+
+| | v1 | v2 |
+|---|---|---|
+| **Philosophy** | Explicit procedures for the LLM | Principles, trust the LLM to infer |
+| **Schema** | 15 frontmatter fields, strict | 3 fields, loose |
+| **Interface** | 13 commands | Plain conversation |
+| **Agents / Skills** | Separate files, explicit personas | Embedded in one instruction file |
+| **Predictability** | High — rules enforced on every write | Medium — depends on LLM judgment |
+| **Setup cost** | Higher — more files, more conventions | Lower — fill in one file and talk |
+| **Best for** | Teams wanting process control and auditability | Individuals or teams wanting speed and flexibility |
+
+Neither version is better. They fit different contexts and different working styles.
 
 ---
 
