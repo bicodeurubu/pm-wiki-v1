@@ -519,6 +519,39 @@ Wiki-PM pre-compiles knowledge with permanent cross-references. Every query is f
 
 ---
 
+## Security considerations
+
+Wiki-PM is designed to be read by an LLM. That creates risks that a plain folder of notes doesn't have. Read these before you put real product data into your vault.
+
+### LLM data retention (DLP / LGPD / GDPR)
+
+**If you use a public or personal LLM interface** (claude.ai free/pro, ChatGPT web, Gemini consumer), your vault contents may be used for model training. This is a direct violation of most company data policies and potentially LGPD/GDPR if the vault contains customer-related data.
+
+Before pointing an LLM at a vault with real product data, use one of:
+- **Claude for Enterprise** (zero data retention by contract)
+- **Anthropic API / OpenAI API** (opt-out of training available — verify your account settings)
+- **Azure OpenAI** (zero data retention by default in enterprise tiers)
+- **Local model** (Ollama, LM Studio, LM Serve — never leaves your machine)
+
+**What belongs in this vault and what doesn't:**
+
+| ✅ Safe | ❌ Never store here |
+|---|---|
+| Anonymized research synthesis | Raw PII (customer names, emails, phone numbers) |
+| Aggregated metrics | Verbatim identifiable chat/support logs |
+| Strategic decisions and OKRs | API keys, tokens, credentials |
+| Competitor analysis and meeting notes | `.env` files or auth material of any kind |
+
+### Cross-vault path safety
+
+When configuring `context.md`, only reference sibling vaults at the same directory level. Never use `../../` paths that escape the workspace — this can allow an LLM agent to read unrelated files (other projects, system files). See `context.md` for the full rule.
+
+### Prompt injection awareness
+
+When ingesting external content (customer feedback, support tickets, raw interview transcripts), treat those inputs as untrusted. Malicious content can embed instructions that hijack the LLM's behavior. Ask the LLM to **summarize and extract** from external files — never ask it to follow instructions found within them.
+
+---
+
 ## Contributing
 
 This repository is designed to be forked and adapted. See `agents/custom/` and `skills/custom/` for extension points. Share useful custom skills with the community via pull request.
