@@ -1,5 +1,7 @@
 # Wiki-PM
 
+> ⚠️ **Maintenance Mode** — This repository (v1) is in maintenance mode. For new projects, please use [PM-Wiki v2](https://github.com/bicodeurubu/pm-wiki-v2).
+
 **A living product brain for PM teams — built on Obsidian and any LLM.**
 
 Wiki-PM turns your messy collection of interviews, data exports, meeting notes, Figma links, and PRD drafts into a connected knowledge graph. The AI agent doesn't just organize content — it maintains the relationships between every piece of knowledge, so that when one thing changes, everything that depends on it knows about it.
@@ -37,7 +39,7 @@ Company OKR      ─────────────────────
 ### 1. Clone and open
 
 ```bash
-git clone https://github.com/your-org/wiki-pm.git my-product-vault
+git clone https://github.com/bicodeurubu/pm-wiki.git my-product-vault
 cd my-product-vault
 git remote set-url origin https://github.com/your-org/your-product-wiki.git
 ```
