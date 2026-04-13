@@ -555,3 +555,13 @@ When ingesting external content (customer feedback, support tickets, raw intervi
 ## Contributing
 
 This repository is designed to be forked and adapted. See `agents/custom/` and `skills/custom/` for extension points. Share useful custom skills with the community via pull request.
+
+---
+
+## Attribution
+
+Wiki-PM (v1) is a fork of **[llm-wikid](https://github.com/shannhk/llm-wikid)** by [Shann Holmberg](https://github.com/shannhk), which is itself inspired by the LLM Wiki pattern originally described by [Andrej Karpathy](https://github.com/karpathy).
+
+The original `llm-wikid` concept was adapted and extended for product management workflows — adding the Opportunity Solution Tree framework (Teresa Torres), spec/decision/experiment page types, a full command and agent system, and the graph-based connection model.
+
+If you fork this repository, please maintain this attribution chain.
