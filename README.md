@@ -39,7 +39,7 @@ Company OKR      ─────────────────────
 ### 1. Clone and open
 
 ```bash
-git clone https://github.com/bicodeurubu/pm-wiki.git my-product-vault
+git clone https://github.com/bicodeurubu/pm-wiki-v1.git my-product-vault
 cd my-product-vault
 git remote set-url origin https://github.com/your-org/your-product-wiki.git
 ```
