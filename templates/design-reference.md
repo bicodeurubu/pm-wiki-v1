@@ -22,6 +22,8 @@ needs_review: false
 last_source_update: YYYY-MM-DD
 confidence: medium
 explored: false
+ingest_state: processed
+refinement_questions: []
 ---
 
 # Design Reference: [Artifact Name] [vX]

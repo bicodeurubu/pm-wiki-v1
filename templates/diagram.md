@@ -16,6 +16,8 @@ needs_review: false
 last_source_update: YYYY-MM-DD
 confidence: high
 explored: false
+ingest_state: processed
+refinement_questions: []
 ---
 
 # Diagram: [Name]

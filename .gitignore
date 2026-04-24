@@ -50,3 +50,4 @@ raw/assets/
 
 # v2 is a separate git repo — keep isolated
 wiki-pm-v2/
+.claude/worktrees/

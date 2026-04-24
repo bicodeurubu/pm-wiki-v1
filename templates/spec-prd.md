@@ -15,6 +15,8 @@ needs_review: false
 last_source_update: YYYY-MM-DD
 confidence: low
 explored: false
+ingest_state: processed
+refinement_questions: []
 ---
 
 # [Feature Name] — PRD

@@ -8,6 +8,31 @@ Each entry is a TLDR — the agent reads this file first to identify relevant pa
 
 ---
 
+## ⏳ Refinamento Pendente
+
+Páginas com `refinement_questions` não resolvidas. Use `/wiki-refine [[pagina]]` para conduzir uma sessão de refinamento.
+
+<!-- Agent maintains this section automatically. Format:
+🔴 [[pagina]] — [N] perguntas | high priority: [resumo da pergunta mais crítica]
+🟡 [[pagina]] — [N] perguntas | medium priority: [resumo]
+-->
+
+<!-- When empty, replace this section with: "Nenhum refinamento pendente." -->
+
+---
+
+## ⚠️ Pendentes de Conversão
+
+Arquivos em `raw/` que precisam de pré-processamento antes do ingest (ex: áudio sem transcript).
+
+<!-- Agent maintains this section. Format:
+- `raw/interviews/reuniao-produto.mp3` — pending_conversion | Gerar transcript e salvar como .txt
+-->
+
+<!-- When empty, replace this section with: "Nenhum arquivo pendente de conversão." -->
+
+---
+
 ## Strategy
 
 <!-- Agent appends entries here as strategy/ pages are created -->

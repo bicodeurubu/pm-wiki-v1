@@ -30,6 +30,28 @@ Company OKR      ─────────────────────
   - The LLM must be able to: read files from the vault directory, execute commands via your chosen interface
   - Tested with: Claude (claude.ai, API), Cursor, Continue, Zed AI
 
+### Optional: local audio and document conversion
+
+The vault works without these tools. They enable automatic conversion of audio files and richer document extraction.
+
+**Whisper** — local audio/video transcription (free, runs offline)
+```bash
+pip install openai-whisper
+```
+When installed, the agent will detect it automatically and offer to transcribe `.mp3`, `.mp4`, and similar files before ingesting them. Without Whisper, the agent will ask you to provide a transcript manually.
+
+**Pandoc** — document format conversion
+```bash
+# macOS
+brew install pandoc
+
+# Ubuntu/Debian
+sudo apt-get install pandoc
+```
+Improves extraction quality for `.docx` and complex document formats.
+
+Neither tool is required for plain text, markdown, CSV, or text-based PDF files.
+
 ---
 
 ## Getting started
@@ -64,12 +86,17 @@ Drop any file into the appropriate `raw/` subfolder:
 
 | What you have | Where to put it |
 |---|---|
-| User interview notes | `raw/interviews/` |
+| Not sure / anything | `raw/inbox/` ← start here if in doubt |
+| User interview notes or transcripts | `raw/interviews/` |
 | Analytics export / dashboard screenshot | `raw/data/` |
 | Competitor research | `raw/competitor/` |
-| Meeting notes | `raw/clippings/` |
 | PRD draft, ideas, Slack notes | `raw/ideas/` |
 | Web articles, reports | `raw/clippings/` |
+| Audio/video recording | Convert to `.txt` first — see `raw/LEIA-ME.md` |
+
+> **Subfolders are optional context hints, not mandatory.** Using the right subfolder improves the AI's classification accuracy, but everything also works if you drop files in `raw/inbox/`.
+
+> **Audio and video files** (`.mp3`, `.mp4`, etc.) need to be transcribed before the agent can process them. See `raw/LEIA-ME.md` for instructions, or install Whisper CLI for automatic transcription.
 
 ### 5. Ingest
 
